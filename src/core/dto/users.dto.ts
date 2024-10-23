@@ -39,3 +39,12 @@ export class UpdateUserDto {
   @IsNotEmpty({ message: 'You can only update the email and name fields. At least one value must be provided.' })
   dummyField?: string;
 }
+export class LoginUserDto {
+  @IsEmail()
+  @IsNotEmpty()
+  email: string;
+
+  @IsNotEmpty()
+  @IsString()
+  password: string;
+}
